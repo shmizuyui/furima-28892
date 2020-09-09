@@ -49,11 +49,11 @@ Things you may want to cover:
 | user_id       | references | null: false, foreign_key: true |
 | image         | string     | null: false                    |
 | description   | text       | null: false                    |
-| category      | string     | null: false                    |
-| condition     | string     | null: false                    |
-| postage_payer | string     | null: false                    |
-| prefecture    | string     | null: false                    |
-| handing_time  | string     | null: false                    |
+| category      | integer    | null: false                    |
+| condition     | integer    | null: false                    |
+| postage_payer | integer    | null: false                    |
+| prefecture    | integer    | null: false                    |
+| handing_time  | integer    | null: false                    |
 | price         | integer    | null: false                    |
 
 ### Association
