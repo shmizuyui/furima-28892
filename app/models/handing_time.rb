@@ -1,2 +1,0 @@
-class HandingTime < ApplicationRecord
-end
