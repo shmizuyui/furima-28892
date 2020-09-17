@@ -3,4 +3,5 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to_active_hash :category
   belongs_to_active_hash :condition
+  belongs_to_active_hash :postage_payer
 end
