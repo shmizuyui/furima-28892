@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2020_09_17_094920) do
     t.bigint "user_id", null: false
     t.text "description", null: false
     t.integer "category_id", null: false
-    t.integer "condition", null: false
-    t.integer "postage_payer", null: false
-    t.integer "prefecture", null: false
-    t.integer "handing_time", null: false
+    t.integer "condition_id", null: false
+    t.integer "postage_payer_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "handing_time_id", null: false
     t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
