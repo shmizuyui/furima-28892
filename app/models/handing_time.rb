@@ -1,0 +1,2 @@
+class HandingTime < ApplicationRecord
+end
