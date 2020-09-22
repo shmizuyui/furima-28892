@@ -9,15 +9,16 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
+    validates :image
     validates :text
     validates :description
     validates :price
   end
   with_options numericality: { other_than: 1 } do
-    validates :category
-    validates :condition
-    validates :postage_payer
-    validates :prefecture
-    validates :handing_time
+    validates :category_id
+    validates :condition_id
+    validates :postage_payer_id
+    validates :prefecture_id
+    validates :handing_time_id
   end
 end
