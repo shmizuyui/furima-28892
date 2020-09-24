@@ -14,11 +14,9 @@ class Item < ApplicationRecord
     validates :description
     validates :price
   end
-  with_options numericality: { other_than: 1 } do
-    validates :category_id
-    validates :condition_id
-    validates :postage_payer_id
-    validates :prefecture_id
-    validates :handing_time_id
-  end
+    validates :category_id, numericality: { other_than: 1, message: "Select" }
+    validates :condition_id, numericality: { other_than: 1, message: "Select" }
+    validates :postage_payer_id, numericality: { other_than: 1, message: "Select" }
+    validates :prefecture_id, numericality: { other_than: 1, message: "Select" }
+    validates :handing_time_id, numericality: { other_than: 1, message: "Select" }
 end
