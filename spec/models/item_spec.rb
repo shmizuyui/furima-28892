@@ -57,6 +57,19 @@ describe Item do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it 'priceが半角数字でない場合は出品できない' do
+        @item.price = '９９９９９９９'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid. Input half-width number.')
+      end
+      it 'priceが10000000円以上だと登録できない' do
+        @item.price = '10000000'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
+      end
+      it 'priceが299円以下だと登録できない' do
+        @item.price = '299'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
     end
   end

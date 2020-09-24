@@ -15,6 +15,9 @@ class Item < ApplicationRecord
     validates :price
   end
 
+  validates :price, numericality: { message: 'is invalid. Input half-width number.'}
+  validates :price, inclusion: {in: 300..9999999, message: 'Out of setting range' }
+
   with_options numericality: { other_than: 1, message: 'Select' } do
     validates :category_id
     validates :condition_id
