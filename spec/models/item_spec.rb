@@ -27,27 +27,27 @@ describe Item do
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
       it 'categoryを選択していないと出品できない' do
-        @item.category_id = ''
+        @item.category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Category Select')
       end
       it 'conditionを選択していないと出品できない' do
-        @item.condition_id = ''
+        @item.condition_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Condition Select')
       end
       it 'postage_payerを選択していないと出品できない' do
-        @item.postage_payer_id = ''
+        @item.postage_payer_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Postage payer Select')
       end
       it 'prefectureを選択していないと出品できない' do
-        @item.prefecture_id = ''
+        @item.prefecture_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture Select')
       end
       it 'handing_timeを選択していないと出品できない' do
-        @item.handing_time_id = ''
+        @item.handing_time_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include('Handing time Select')
       end
@@ -62,12 +62,12 @@ describe Item do
         expect(@item.errors.full_messages).to include('Price is invalid. Input half-width number.')
       end
       it 'priceが10000000円以上だと登録できない' do
-        @item.price = '10000000'
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceが299円以下だと登録できない' do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
