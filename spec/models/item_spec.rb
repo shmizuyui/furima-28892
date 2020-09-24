@@ -27,27 +27,27 @@ describe Item do
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
       it 'categoryを選択していないと出品できない' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Category Select')
       end
       it 'conditionを選択していないと出品できない' do
-        @item.condition_id = '1'
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Condition Select')
       end
       it 'postage_payerを選択していないと出品できない' do
-        @item.postage_payer_id = '1'
+        @item.postage_payer_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Postage payer Select')
       end
       it 'prefectureを選択していないと出品できない' do
-        @item.prefecture_id = '1'
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefecture Select')
       end
       it 'handing_timeを選択していないと出品できない' do
-        @item.handing_time_id = '1'
+        @item.handing_time_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Handing time Select')
       end
