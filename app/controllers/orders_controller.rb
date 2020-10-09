@@ -4,6 +4,11 @@ class OrdersController < ApplicationController
 
   def index
     @order = AddressOrder.new
+    if @item.user == current_user
+      redirect_to root_path
+    else
+      render "index"
+    end
   end
 
   def create
